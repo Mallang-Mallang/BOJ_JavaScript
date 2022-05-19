@@ -7,10 +7,10 @@ let input =
     ? require("fs").readFileSync("/dev/stdin").toString().trim()
     : userInput;
 
-let [[N], arr] = input.split("\n").map((v) => v.split("").map(Number));
+let [N, arr] = input.split("\n").map((v) => v.split("").map(Number));
 
-let result = arr.reduce((acc, current) => {
+let answer = arr.slice(0, N.join("")).reduce((acc, current) => {
   return acc + current
 })
 
-console.log(result);
+console.log(answer);

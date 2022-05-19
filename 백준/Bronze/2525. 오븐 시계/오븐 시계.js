@@ -7,8 +7,7 @@ let input =
     ? require("fs").readFileSync("/dev/stdin").toString().trim()
     : userInput;
 
-let [A, [B]] = input.split("\n").map((v) => v.split(" ").map(Number));
-[hour, min] = A;
+let [[hour, min], [B]] = input.split("\n").map((v) => v.split(" ").map(Number));
 
 if (min + B > 60) {
   hour += parseInt((min + B) / 60);

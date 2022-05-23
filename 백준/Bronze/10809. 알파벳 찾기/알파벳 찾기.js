@@ -6,15 +6,15 @@ let input =
     ? require("fs").readFileSync("/dev/stdin").toString().trim()
     : userInput;
 
-let answer = "";
+let answer = [];
 
   for (let j = 97; j <= 122; j++) {
     if (input.includes(String.fromCharCode(j))) {
-      answer += input.indexOf(String.fromCharCode(j)) + " ";
+      answer.push(input.indexOf(String.fromCharCode(j)));
     }else {
-      answer += -1 + " ";
+      answer.push(-1);
     }
   }
 
 
-console.log(answer);
+console.log(answer.join(" "));
